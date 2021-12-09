@@ -10,11 +10,11 @@ int main()
     display.cls();
     display.locate(0, 0);       //Row 0, column 0
     display.printf("Task 2");
-    // ***** MODIFY THE CODE BELOW HERE *****
-
-    // Using a do-while-loop, count from 0 to +50 in steps of 5 - print the results on row 2 of the LCD screen every 1 second 
-
-    // ***** MODIFY THE CODE ABOVE HERE *****
+    do {
+  cout << "value of a: " << a << endl;
+  a = a + 1;
+}while( a < 50 );
+return 0;
     leds = 7;
 
     while (true) {
