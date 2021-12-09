@@ -8,19 +8,47 @@ LCD_16X2_DISPLAY display;
 int main()
 {
 
-    // ***** MODIFY THE CODE BELOW HERE *****
+  const int ledPin = 13;
+int ledState = LOW;             // ledState used to set the LED
+int flash = 5;
 
-    //1. Use a while loop to wait for the blue button to be pressed, then released. For full marks, account for switch bounce.
+unsigned long previousMillis = 0;        // will store last time LED was updated
 
-    //2. Using a while-loop, flash the yellow LED on and off 5 times. Each flash should last 0.5s. 
+const long interval = 1000;           // interval at which to blink (milliseconds)
 
-    //3. Using a while-loop, flash the green LED on and off 10 times. Each flash should last 0.25s. 
 
-    //4. Using a while-loop, flash the red LED on and off 20 times. Each flash should last 0.125s. 
+void setup() {
+pinMode (ledPin, OUTPUT);
+}
 
-    //5. Using a while-loop, count from 50 down to -50 in steps of 10 - print the results on row 1 of the LCD screen every 0.5 second 
+void loop() {
+  
+ 
+ 
+ for (int i=0; i<flash; i++){
+  
+    unsigned long currentMillis = millis();
+    if(currentMillis - previousMillis >= interval) {
+    // save the last time you blinked the LED 
+    previousMillis = currentMillis;   
 
-    // ***** MODIFY THE CODE ABOVE HERE *****
+
+   // if the LED is off turn it on and vice-versa:
+    if (ledState == LOW)
+      ledState = HIGH;
+    else
+      ledState = LOW;
+
+    // set the LED with the ledState of the variable:
+    digitalWrite(ledPin, ledState);
+  }
+}
+delay (5000);
+}
+
+
+
+
 
     while (true) {
 
