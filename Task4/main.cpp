@@ -13,25 +13,17 @@ int main()
 {
     while (true)
     {
-    // ***** MODIFY THE CODE BELOW HERE *****
-    // For full marks, debounce the switches with suitable delays
-
-    // 1. Wait for sw1 to be pressed and released
-
-    // 2. Wait for sw2 to be pressed and released
-
-    // 3. Wait for sw1 and sw2 to be pressed (together)
-
-    // 4. Wait for either sw1 or sw2 to be released
-
-    // 5. Turn on only the yellow and green LEDs
-
-    // 6. Wait for 1s
-
-    // 7. Turn on only the red LEDs
-
-    // ***** MODIFY THE CODE ABOVE HERE *****
-    }
+   void push(int pin) {
+  // wait until button was pushed down...
+  while (digitalRead(pin) == LOW);
+  // ... and released again
+  while (digitalRead(pin) == HIGH);
+}void push(int pin) {
+  // wait until button was pushed down...
+  while (digitalRead(pin) == LOW);
+  // ... and released again
+  while (digitalRead(pin) == HIGH);
+}
 
     while(true);
 }
